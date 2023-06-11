@@ -14,11 +14,11 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-.hero {
+.header {
   background-image: linear-gradient(
       120deg,
-      rgba(241, 147, 251, 0.699) 0%,
-      rgba(85, 27, 35, 0.692) 100%
+      rgba(241, 147, 251, 0.399) 0%,
+      rgba(85, 27, 35, 0.492) 100%
     ),
     url("../img/header.jpg");
   width: 100%;
@@ -31,26 +31,48 @@ body {
   overflow: hidden;
 }
 
-.textos-hero {
-  height: 500px;
+/*HEADER SUPERIOR*/
+
+.header__sup {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.search__input {
+  width: 300px;
+  padding: 10px;
+}
+
+.header__img {
+  width: 250px;
+}
+
+.hero__text {
+  height: 450px;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
-.textos-hero h1 {
-  font-size: 60px;
+.hero__text h1 {
+  margin: 0;
+  font-size: 3rem;
 }
 
-.textos-hero p {
+.hero__text p {
   font-size: 25px;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.textos-hero a {
+.hero__text a {
   display: inline-block;
   text-decoration: none;
   padding: 12px 15px;
@@ -59,7 +81,7 @@ body {
   color: #fff;
 }
 
-.svg-hero {
+.hero__svg {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -68,30 +90,26 @@ body {
 
 /* Estilos generales */
 
-.contenedor,
-.wave-contenedor {
+.container {
   width: 90%;
   max-width: 1000px;
   overflow: hidden;
   margin: auto;
-  padding: 0 0 80px 0;
-}
-.contenedor {
   padding: 80px 0;
 }
 
-.titulo {
+.title {
   font-weight: 300;
   font-size: 35px;
   text-align: center;
   margin-bottom: 30px;
 }
 
-.titulo.left {
+.title.left {
   text-align: left;
 }
 
-.titulo.right {
+.title.right {
   text-align: right;
 }
 
@@ -106,11 +124,11 @@ body {
   width: 48%;
 }
 
-.website .contenedor-textos-main {
+.website .section__text {
   width: 40%;
 }
 
-.parrafo {
+.paragraph {
   text-align: justify;
   margin-bottom: 20px;
 }
@@ -138,7 +156,7 @@ body {
 
 /* Cards */
 
-.content-cards {
+.cards__content {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
@@ -174,11 +192,11 @@ body {
 
 /* galeria */
 
-.galeria {
+.gallery {
   background: #c39af8;
 }
 
-.galeria-cont {
+.gallery__content {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -186,7 +204,7 @@ body {
   overflow: hidden;
 }
 
-.galeria-cont > img {
+.gallery__content > img {
   width: 30%;
   object-fit: cover;
   margin-bottom: 20px;
@@ -197,24 +215,59 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.galeria-img:hover {
-  transform: scale(1.1);
+.gallery__img:hover {
+  transform: scale(1.04);
+}
+
+/* Gallery Lightbox */
+
+.gallery__lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  display: none;
+  z-index: 100;
+}
+
+.gallery__lightbox--close {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.gallery__img--show {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #ffffff81;
+  border-radius: 5px;
+  width: 80%;
+  object-fit: cover;
 }
 
 /* info2 */
 
-.last-section {
+.section__last {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 40px;
 }
 
-.last-section img {
+.section__last img {
   width: 48%;
 }
 
-.last-section .contenedor-textos-main {
+.section__last .section__text {
   width: 40%;
 }
 
@@ -270,17 +323,49 @@ input[type="submit"]:hover {
   background: #fff;
 }
 
+.scrollTop {
+  position: fixed;
+  z-index: 100;
+  bottom: 1vh;
+  right: 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 30%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background-color: #80808071;
+  backdrop-filter: blur(2px);
+  color: #000000d8;
+  cursor: pointer;
+  outline: 0;
+  border: 1px solid #00000066;
+  transition: all 0.3s ease-out;
+}
+
+.scrollTop:hover {
+  background-color: #fff;
+  color: gray;
+}
+
 @media screen and (max-width: 800px) {
-  .textos-hero h1 {
+  .header__img {
+    width: 200px;
+  }
+
+  .header__sup {
+    padding: 10px;
+  }
+
+  .hero__text h1 {
     text-align: center;
     font-size: 50px;
   }
   /* estilos generales */
-  .titulo {
+  .title {
     font-size: 35px;
   }
 
-  .titulo.left {
+  .title.left {
     text-align: center;
   }
 
@@ -299,7 +384,7 @@ input[type="submit"]:hover {
     width: 100%;
   }
 
-  .website .contenedor-textos-main {
+  .website .section__text {
     width: 100%;
     text-align: center;
   }
@@ -313,17 +398,21 @@ input[type="submit"]:hover {
 
   /* galeria */
 
-  .galeria-cont > img {
+  .gallery__content > img {
     width: 48%;
+  }
+
+  .gallery__img--show {
+    width: 95%;
   }
 
   /* last */
 
-  .last-section img {
+  .section__last img {
     width: 98%;
   }
 
-  .last-section .contenedor-textos-main {
+  .section__last .section__text {
     width: 98%;
     margin-bottom: 20px;
     text-align: center;
@@ -331,12 +420,12 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 400px) {
-  .titulo,
-  .textos-hero h1 {
+  .title,
+  .hero__text h1 {
     font-size: 30px;
   }
 
-  .textos-hero p {
+  .hero__text p {
     font-size: 20px;
     text-align: center;
   }
@@ -345,12 +434,12 @@ input[type="submit"]:hover {
     height: 380px;
   }
 
-  .website .contenedor-textos-main {
+  .website .section__text {
     margin-bottom: 30px;
     text-align: center;
   }
 
-  .galeria-cont > img {
+  .gallery__content > img {
     width: 97%;
   }
 }
