@@ -153,22 +153,70 @@
         <div class="container">
           <h2 class="title">Galeria Lightbox</h2>
           <article class="gallery__content">
-            <img class="gallery__img" src="img/uno.jpg" alt="naturaleza" />
-            <img class="gallery__img" src="img/dos.jpg" alt="utiles" />
-            <img class="gallery__img" src="img/tres.jpg" alt="ciudad" />
-            <img class="gallery__img" src="img/cuatro.jpg" alt="skyline" />
+            <img
+              class="gallery__img"
+              src="img/uno.jpg"
+              alt="naturaleza"
+              data-id="1"
+            />
+            <img
+              class="gallery__img"
+              src="img/dos.jpg"
+              alt="utiles"
+              data-id="2"
+            />
+            <img
+              class="gallery__img"
+              src="img/tres.jpg"
+              alt="ciudad"
+              data-id="3"
+            />
+            <img
+              class="gallery__img"
+              src="img/cuatro.jpg"
+              alt="skyline"
+              data-id="4"
+            />
             <img
               class="gallery__img"
               src="img/cinco.jpg"
               alt="mujer en ventana"
+              data-id="5"
             />
-            <img class="gallery__img" src="img/seis.jpg" alt="arte digital" />
+            <img
+              class="gallery__img"
+              src="img/seis.jpg"
+              alt="arte digital"
+              data-id="6"
+            />
           </article>
         </div>
-        <div class="gallery__lightbox">
-          <span class="gallery__lightbox--close">&times;</span>
-          <img src="img/uno.jpg" alt="naturaleza" class="gallery__img--show" />
-        </div>
+
+        <section class="lightbox">
+          <section class="gallery__lightbox gallery__lightbox--show">
+            <span class="gallery__lightbox--close">&times;</span>
+            <img
+              src="./img/leftarrow.svg"
+              alt="flecha izquierda"
+              class="gallery__leftArrow"
+            />
+
+            <div class="gallery__container">
+              <img
+                src="img/uno.jpg"
+                alt="naturaleza"
+                class="gallery__img--show"
+                data-id="1"
+              />
+            </div>
+
+            <img
+              src="./img/rightarrow.svg"
+              alt="flecha derecha"
+              class="gallery__rightArrow"
+            />
+          </section>
+        </section>
       </section>
 
       <section id="section2" class="info__last">
